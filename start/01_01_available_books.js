@@ -1,6 +1,5 @@
 // Write your code here
 class Book {
-
   constructor(title, author, ISBN, numCopies) {
     this.title = title;
     this.author = author;
@@ -9,7 +8,7 @@ class Book {
   }
 
   get availability () {
-    this.getAvailability();
+    return this.getAvailability();
   }
 
   getAvailability () {
@@ -25,7 +24,7 @@ class Book {
     this.numCopies -= numCopiesSold;
   }
 
-  restorck(numCopiesStocked = 5){
+  restock(numCopiesStocked = 5){
     this.numCopies += numCopiesStocked;
   }
 }
