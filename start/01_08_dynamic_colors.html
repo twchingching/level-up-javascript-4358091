@@ -18,7 +18,25 @@
 
   <script>
     // Write your code here
-
+    /*
+    three buttons and will change background color document body
+    blue 
+    pink
+    green
+    use closure
+    */
+    function changeToBlue() {
+      document.body.style.background = "#0f62fe";
+    }
+    function changeToPink() {
+        document.body.style.background = "#ff7eb6";
+    }
+    function changeToGreen() {
+        document.body.style.background = "#42be65";
+    }
+    document.querySelector('#blue').addEventListener('click', changeToBlue);
+    document.querySelector('#pink').addEventListener('click', changeToPink);
+    document.querySelector('#green').addEventListener('click', changeToGreen);
   </script>
 </body>
 
