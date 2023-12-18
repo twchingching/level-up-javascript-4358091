@@ -18,25 +18,42 @@
 
   <script>
     // Write your code here
-    /*
+       /*
     three buttons and will change background color document body
     blue 
     pink
     green
     use closure
     */
-    function changeToBlue() {
-      document.body.style.background = "#0f62fe";
+
+    function changeColor(color) {
+      return function () {
+        document.body.style.background = color;
+      }
     }
-    function changeToPink() {
-        document.body.style.background = "#ff7eb6";
-    }
-    function changeToGreen() {
-        document.body.style.background = "#42be65";
-    }
-    document.querySelector('#blue').addEventListener('click', changeToBlue);
-    document.querySelector('#pink').addEventListener('click', changeToPink);
-    document.querySelector('#green').addEventListener('click', changeToGreen);
+
+    const bgColorBlue = changeColor("#0f62fe");
+    const bgColorPink = changeColor("#ff7eb6");
+    const bgColorGreen = changeColor("#42be65");
+
+    document.querySelector('#blue').addEventListener('click', bgColorBlue);
+    document.querySelector('#pink').addEventListener('click', bgColorPink);
+    document.querySelector('#green').addEventListener('click', bgColorGreen);
+
+
+    // function changeToBlue() {
+    //   document.body.style.background = "#0f62fe";
+    // }
+    // function changeToPink() {
+    //     document.body.style.background = "#ff7eb6";
+    // }
+    // function changeToGreen() {
+    //     document.body.style.background = "#42be65";
+    // }
+    // document.querySelector('#blue').addEventListener('click', changeToBlue);
+    // document.querySelector('#pink').addEventListener('click', changeToPink);
+    // document.querySelector('#green').addEventListener('click', changeToGreen);
+
   </script>
 </body>
 
