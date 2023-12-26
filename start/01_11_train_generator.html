@@ -16,7 +16,42 @@
 
   <script>
     // Write your code here
+    /*
+    on button click, console log the "next stop"
+    use a generator function
+    train station
+    1.Poughkeepsie
+    2.NewBurgh
+    3.Peekskill
+    4.Yonkers
+    5.Bronx
+    6.GrandCentral
+    console log the finial stop "We made it!"
 
+    solution:
+    set each train line -> finding the button -> add event listener -> find current stop -> result
+    */
+    function* getEachStop() {
+      yield "Poughkeepsie";
+      yield "NewBurgh";
+      yield "Peekskill";
+      yield "Yonkers";
+      yield "Bronx";
+      yield "GrandCentral";
+    }
+
+    const syncEachStopLine = getEachStop();
+    const nextStopLineButton = document.querySelector("#next-stop");
+    nextStopLineButton.addEventListener('click', () => {
+      let currentStopLine = syncEachStopLine.next();
+      if (currentStopLine.done) {
+        console.log('We made it!')
+        nextStopLineButton.setAttribute("disabled", true);
+      } else {
+        console.log(currentStopLine.value);
+      }
+    })
+  
   </script>
 </body>
 
